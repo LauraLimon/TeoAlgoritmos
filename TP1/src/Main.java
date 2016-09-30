@@ -13,6 +13,14 @@ public class Main {
 		    
 			System.out.println(graph.toString());
 			
-	
+			
+			Heap heap = new Heap(9);
+			heap.Agregar(11);
+			heap.Agregar(15);
+			heap.Agregar(8);
+			heap.Agregar(10);
+			System.out.println(heap.toString());
 		  }
+	 
+	
 }
