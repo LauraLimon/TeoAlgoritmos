@@ -19,16 +19,16 @@ public class Heap {
     }*/
     
     public void Agregar(Comparable elemento){
-       	ultimo ++;
-    	elementos[ultimo] = elemento;
+       	elementos[ultimo] = elemento;
       	HeapifyUp(ultimo);
+      	ultimo ++;
    
     }
     
     private void HeapifyUp(int i){
-         if (i <= 1){return;}
+         if (i <= 0){return;}
          {
-            int padre = i / 2;
+            int padre = (i-1) / 2;
             if (elementos[i].compareTo(elementos[padre]) == -1)
             Intercambiar(i,padre);
             i = padre;
@@ -60,7 +60,7 @@ public class Heap {
     
     public String toString() {
 		String s = "";
-		for (int v = 0; v <= ultimo; v++) {
+		for (int v = 0; v < ultimo; v++) {
             s += elementos[v] + ", ";
 		}
 		return "("+ s + ")";
