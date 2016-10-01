@@ -18,32 +18,32 @@ public class Grafo {
 	    }
 	
 	
-	    public int V() {
+	    public int v() {
 	        return V;
 	    }
 
 	    
-	    public int E() {
+	    public int e() {
 	        return E;
 	    }
 
 	    
-	    private void validateVertex(int v) {
+	    private void validar_vertice(int v) {
 	    	if (!adj.containsKey(v)) {
 	            throw new IndexOutOfBoundsException("El vértice ingresado es inválido");}
 	    }
 	    
 	    
-	    public void addEdge(int v, int w, int peso) {
-	        validateVertex(v);
-	        validateVertex(w);
+	    public void add_edge(int v, int w, int peso) {
+	    	validar_vertice(v);
+	    	validar_vertice(w);
 	        E++;
 			adj.get(v).add(new Arista(v, w, peso));
 			       
 	    }
 	
-	    public void addEdge(int v, int w) {
-	         addEdge(v, w, 0);
+	    public void add_edge(int v, int w) {
+	    	add_edge(v, w, 0);
 		}
 	    
 	    
@@ -63,10 +63,24 @@ public class Grafo {
 	    }
 	    
 	    
+	    public ArrayList<Integer> iter()
+	    {
+	    	ArrayList<Integer> vertices = new ArrayList<Integer>();
+	    	for (int v=0; v< this.V; v++){
+	    		vertices.add(v);
+	    	 } 
+	    	return vertices;    
+	    }
 	    
 	    
-	    
-	    
+	    public ArrayList<Arista> iter_edges()
+	    {
+	    	ArrayList<Arista> aristas = new ArrayList<Arista>();
+	    	for (int v=0; v < this.V; v++){
+	    		aristas.addAll(adj_e(v));
+	    	 } 
+	    	return aristas;    
+	    }
 	  
 	
 	    public String toString() {
