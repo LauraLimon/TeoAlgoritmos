@@ -1,16 +1,20 @@
 import java.util.ArrayList;
 
 public class Arista{
-    private int V;
+    private int src;
+    private int dst;
 	private int peso;
 	
-	public Arista(int v, int peso) {
-		this.V = v;
+	public Arista(int scr, int dst, int peso) {
+		this.src = scr;
+		this.dst = dst;
 		this.peso = peso;
 	}
 	
+	
+	
      public String toString(){
 		
-		return "( "+ V + ", " + peso + " )";
+		return "( "+ src + ", "+ dst + " , " + peso + " )";
 	}
 }

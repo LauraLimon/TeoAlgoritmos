@@ -38,7 +38,7 @@ public class Grafo {
 	        validateVertex(v);
 	        validateVertex(w);
 	        E++;
-			adj.get(v).add(new Arista(w, peso));
+			adj.get(v).add(new Arista(v, w, peso));
 			       
 	    }
 	
@@ -46,6 +46,28 @@ public class Grafo {
 	         addEdge(v, w, 0);
 		}
 	    
+	    
+	    public ArrayList<Arista> adj_e(int v)
+	    {
+	    	return adj.get(v);
+	    }
+	    
+	    public ArrayList<Integer> adj(int v)
+	    {
+	    	ArrayList<Integer> adj = new ArrayList<Integer>();
+	    	ArrayList<Arista> aristasAdj = this.adj.get(v); 
+	    	for (int i=0; i< aristasAdj.size(); i++){
+	    		adj.add(aristasAdj.indexOf(i));
+	    	 } 
+           return adj;    
+	    }
+	    
+	    
+	    
+	    
+	    
+	    
+	  
 	
 	    public String toString() {
 			String s = "";
