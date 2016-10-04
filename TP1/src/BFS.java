@@ -7,7 +7,7 @@ public class BFS extends Caminos{
 	 
 	  
 	   public BFS(Grafo g, int origen, int destino) {
-	        super(g, origen);
+	        super(g, origen, destino);
 	       
 	            Queue<Integer> q = new LinkedList<Integer>();
                 q.add(origen);
