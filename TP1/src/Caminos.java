@@ -3,11 +3,9 @@ import java.util.Stack;
 
 public abstract class Caminos {
 	 private int src;
-	 private int dst;
-	 
-	    protected Caminos(Grafo g, int src, int dst) {
+
+	    protected Caminos(Grafo g, int src) {
 	    	this.src = src;
-	    	this.dst = dst;
 	    }
 
 	    public abstract double distancia(int v);
@@ -18,11 +16,11 @@ public abstract class Caminos {
 	    }
 	    
 	   	    
-	    public List<Arista> camino() {
+	    public List<Arista> camino(int v) {
 	    
-	    	if (!visitado(dst)) return null;
+	    	if (distancia(v) >= Double.POSITIVE_INFINITY) return null;
 	    	List<Arista> camino = new Stack<Arista>();
-	    	for (Arista e = edge_to(dst); e != null; e = edge_to(e.src())) {
+	    	for (Arista e = edge_to(v); e != null; e = edge_to(e.src())) {
 	    		camino.add(e);
 	    	}
 	    	return camino;
