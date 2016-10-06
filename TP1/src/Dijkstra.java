@@ -16,7 +16,9 @@ public class Dijkstra extends Caminos {
 		pq.insert(src, dist[src]);
 		while (!pq.isEmpty()) {
 			int v = pq.delMin();
-			if (v == dst) break;
+			if (v == dst) {
+				break;
+			}
 			for (Arista e : g.adj_e(v)) {
 				actualizarDistancias(e, dst);
 			}

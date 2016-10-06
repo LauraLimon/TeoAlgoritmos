@@ -1,4 +1,3 @@
-
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -17,16 +16,22 @@ public class BFS extends Caminos {
 		dist[src] = 0;
 		q.add(src);
        
-		while (!q.isEmpty()) {
+		boolean seLlegoADestino = false;
+		while (!q.isEmpty() && !seLlegoADestino) {
 			int v = q.remove();
 			for (Arista e : g.adj_e(v)) {
 				int w = e.dst();
 				if (!visitado(w)) {
 					edge[w] = e;
 					dist[w] = dist[v] + 1;
+					if(w == dst){
+						seLlegoADestino = true;
+						break;
+					}
 					q.add(w);
 				}
-					
+		
+				
 				
 			}
 		}
