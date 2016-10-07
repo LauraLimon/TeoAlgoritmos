@@ -46,7 +46,8 @@ public class Main {
 			Dijkstra sp = new Dijkstra(g2, origen, v);
 			Stack<Arista> camino = (Stack<Arista>) sp.camino();
 			if (camino != null) {
-				System.out.printf("%d a  %d (%.2f)  ", origen, v, sp.distancia(v));
+				System.out.printf("%d a  %d (%.2f)  ", origen, v,
+						sp.distancia(v));
 				while (!camino.empty()) {
 					System.out.print(camino.pop());
 
@@ -78,7 +79,8 @@ public class Main {
 		BFS sp = new BFS(g3, origen, destino);
 		Stack<Arista> camino = (Stack<Arista>) sp.camino();
 		if (camino != null) {
-			System.out.printf("%d a  %d (%.2f)  ", origen, destino, sp.distancia(destino));
+			System.out.printf("%d a  %d (%.2f)  ", origen, destino,
+					sp.distancia(destino));
 			while (!camino.empty()) {
 				System.out.print(camino.pop());
 
@@ -88,6 +90,19 @@ public class Main {
 			System.out.printf("%d to %d  no hay camino\n", origen, destino);
 
 		}
+
+	
+		Integer[] arr1 = { 10, 34, 2, 56, 7, 67, 88, 42 };
+		
+		
+		for (int i=1; i<= arr1.length; i++){
+			int resultado =  (int) K_Selecciones.EncontrarElemento(arr1, i);
+			System.out.println(resultado);
+		}
+		
+		
+		
+		
 
 	}
 }

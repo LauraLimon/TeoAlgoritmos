@@ -1,5 +1,4 @@
-
-public class Heap {
+/*public class Heap {
 	private int tamanio;
 	private int ultimo;
 	private Comparable[] elementos;
@@ -17,8 +16,8 @@ public class Heap {
 		construirHeap();
 	}
 
-	public void construirHeap() {
-		for (int i = tamanio / 2; i >= 0; i--) {
+	private void construirHeap() {
+		for (int i = ultimo / 2; i >= 0; i--) {
 			heapifyDown(i);
 		}
 	}
@@ -53,16 +52,20 @@ public class Heap {
 	}
 
 	private void heapifyDown(int i) {
-		int hijo = i * 2;
-		if (hijo > tamanio) {
+		int hijoIzq = 2 * i;
+		int j = 0;
+		if (hijoIzq >= tamanio) {
 			return;
 		}
-		if (hijo < tamanio) {
-			hijo = hijoMinimo(hijo, hijo + 1);
+		if (hijoIzq < tamanio) {
+			int hijoDerecho = 2 * i + 1;
+			j = hijoMinimo(hijoIzq, hijoDerecho);
+			// } else if (hijoIzq == tamanio) {
+			// j = hijoIzq;
 		}
-		if (elementos[hijo].compareTo(elementos[i]) < 0) {
-			intercambiar(i, hijo);
-			heapifyDown(hijo);
+		if (elementos[j].compareTo(elementos[i]) < 0) {
+			intercambiar(i, j);
+			heapifyDown(j);
 
 		}
 	}
@@ -92,13 +95,15 @@ public class Heap {
 		return min;
 	}
 
-	public void sort(Comparable[] pq) {
-		int n = tamanio;
-		 for (int i = n; i > 0; i--) {
-	            intercambiar(0, i);
-	            n--;
-	            heapifyDown(0);
-	        }
+	public void sort() {
+		construirHeap();
+		while (tamanio > 0) {
+			this.tamanio = tamanio - 1;
+			intercambiar(0, this.tamanio);
+			heapifyDown(0);
+				
+		}
+		
 	}
 
 	public String toString() {
@@ -109,4 +114,4 @@ public class Heap {
 		return "(" + s + ")";
 	}
 
-}
+}*/
