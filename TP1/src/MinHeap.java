@@ -1,22 +1,21 @@
-public class MaxHeap extends Heap {
+public class MinHeap extends Heap {
 	
-
-	public MaxHeap(int tamanio) {
+	public MinHeap(int tamanio) {
 		super(tamanio);
 	}
 
-	public MaxHeap(Comparable[] elementos) {
+	public MinHeap(Comparable[] elementos) {
 		super(elementos);
 	}
 
-
+	
 	protected void heapifyUp(int i) {
 		if (i <= 0) {
 			return;
 		}
 
 		int padre = (i - 1) / 2;
-		if (elementos[i].compareTo(elementos[padre]) > 0) {
+		if (elementos[i].compareTo(elementos[padre]) < 0) {
 			intercambiar(i, padre);
 			i = padre;
 			heapifyUp(i);
@@ -25,40 +24,40 @@ public class MaxHeap extends Heap {
 	}
 
 	protected void heapifyDown(int i) {
-		int hijoIzq, hijoDer, max;
+		int hijoIzq, hijoDer, minimo;
 		hijoIzq = 2 * i + 1;
 		hijoDer = 2 * i + 2;
 		if (hijoDer >= tamanio) {
 			if (hijoIzq >= tamanio) {
 				return;
 			} else {
-				max = hijoIzq;
+				minimo = hijoIzq;
 			}
 
 		} else {
-			if (elementos[hijoIzq].compareTo(elementos[hijoDer]) >= 0) {
-				max = hijoIzq;
+			if (elementos[hijoIzq].compareTo(elementos[hijoDer]) <= 0) {
+				minimo = hijoIzq;
 			} else {
-				max = hijoDer;
+				minimo = hijoDer;
 			}
 		}
 
-		if (elementos[i].compareTo(elementos[max]) < 0) {
-			intercambiar(max, i);
-			heapifyDown(max);
+		if (elementos[i].compareTo(elementos[minimo]) > 0) {
+			intercambiar(minimo, i);
+			heapifyDown(minimo);
 		}
 
 	}
 
 	
-	public Comparable maximo() {
+	public Comparable minimo() {
 		return raiz();
 	}
 
-	public Comparable extraerMaximo() {
+	public Comparable extraerMinimo() {
 		return extraerRaiz();
-
 	}
 
-	
+
+
 }
