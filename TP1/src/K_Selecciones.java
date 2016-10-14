@@ -14,7 +14,7 @@ public class K_Selecciones {
 			elementos[i] = elementos[minimo];
 			elementos[minimo] = elemento;
 		}
-		return elementos[k - 1];
+		return elementos[k];
 	}
 
 }

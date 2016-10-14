@@ -1,27 +1,29 @@
 public class QuickSelect {
-    private Comparable[] list;
+    private static Comparable[] list;
     
-    private void swap(int i, int j) {
+    private static void swap(int i, int j) {
         Comparable aux = list[i];
         list[i] = list[j];
         list[j] = aux;
     }
     
-    private int partition(int firstIndex, int lastIndex, int pivotIndex) {
+    private static int partition(int firstIndex, int lastIndex, int pivotIndex) {
         Comparable pivotValue = list[pivotIndex];
-        this.swap(pivotIndex, lastIndex);
+        swap(pivotIndex, lastIndex);
         int storeIndex = firstIndex;
         for (int i = firstIndex; i < lastIndex; i++) {
             if (less(list[i], pivotValue)) {
-                this.swap(storeIndex, i);
+                swap(storeIndex, i);
+                storeIndex++;
             }
         }
-        this.swap(lastIndex, storeIndex);
+        swap(lastIndex, storeIndex);
         return storeIndex;
     }
     
-    public Comparable encontrarElemento(Comparable[] originalList, int firstIndex, int lastIndex, int k) {
+    public static Comparable EncontrarElemento(Comparable[] originalList, int k) {
         list = originalList;
+        int firstIndex = 0, lastIndex = originalList.length -1;
         while (true) {
             if (firstIndex == lastIndex) {
                 return list[firstIndex];

@@ -8,7 +8,7 @@ public class Grafo {
 	private HashMap<Integer, ArrayList<Arista>> adj;
 
 	 public Grafo(int V) {
-		 if (V < 0) throw new IllegalArgumentException("El número de vértices no puede ser negativo");
+		 if (V < 0) throw new IllegalArgumentException("El numero de vertices no puede ser negativo");
 	        this.V = V;
 	        this.E = 0;
 	        adj = new HashMap<Integer, ArrayList<Arista>>();
@@ -30,7 +30,7 @@ public class Grafo {
 	    
 	    private void validar_vertice(int v) {
 	    	if (!adj.containsKey(v)) {
-	            throw new IndexOutOfBoundsException("El vértice ingresado es inválido");}
+	            throw new IndexOutOfBoundsException("El vertice ingresado es invalido");}
 	    }
 	    
 	    

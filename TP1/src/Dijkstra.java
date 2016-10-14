@@ -1,9 +1,11 @@
+import java.util.Comparator;
+import java.util.PriorityQueue;
 import java.util.Stack;
 
 public class Dijkstra extends Caminos {
 	private Arista edge[];
 	private double dist[];
-	private IndexMinPQ<Double> pq; // cola de prioridad
+	private PriorityQueue<Integer> pq; // cola de prioridad
 
 	public Dijkstra(Grafo g, int src, int dst) {
 		super(g, src, dst);
@@ -12,10 +14,10 @@ public class Dijkstra extends Caminos {
 		for (int v = 0; v < g.v(); v++) {
 			dist[v] = v != src ? Double.POSITIVE_INFINITY : 0;
 		}
-		pq = new IndexMinPQ(g.v());
-		pq.insert(src, dist[src]);
+		pq = new PriorityQueue<Integer>(g.v());
+		pq.add(src);
 		while (!pq.isEmpty()) {
-			int v = pq.delMin();
+			int v = pq.poll();
 			if (v == dst) {
 				break;
 			}
@@ -32,10 +34,8 @@ public class Dijkstra extends Caminos {
 		if ((dist[w] > dist[v] + e.weight())) {
 			dist[w] = dist[v] + e.weight();
 			edge[w] = e;
-			if (pq.contains(w)) {
-				pq.decreaseKey(w, dist[w]);
-			} else {
-				pq.insert(w, dist[w]);
+			if (! pq.contains(w)) {
+				pq.add(w);
 			}
 		}
 	}
@@ -51,4 +51,13 @@ public class Dijkstra extends Caminos {
 		return edge[v];
 
 	}
+        
+    private class ComparadorVertices implements Comparator<Object> {
+        @Override
+        public int compare(Object o1, Object o2) {
+            Integer nodo1 = (Integer) o1;
+            Integer nodo2 = (Integer) o2;
+            return Double.compare(dist[nodo1], dist[nodo2]);
+        }
+    }
 }

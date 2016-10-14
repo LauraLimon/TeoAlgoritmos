@@ -1,5 +1,5 @@
 
-public class OrdernarYSeleccionar {
+public class OrdenarYSeleccionar {
 	public static Comparable EncontrarElemento(Comparable[] elementos, int k) {
 		if (k < 1 || k > elementos.length) {
 			return null;
