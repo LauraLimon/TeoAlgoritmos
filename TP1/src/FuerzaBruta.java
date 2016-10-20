@@ -1,7 +1,7 @@
 public class FuerzaBruta {
 	public static Comparable EncontrarElemento(Comparable[] elementos, int k) {
 		int n = elementos.length;
-		if (k < 1 || k > n) {
+		if (k < 0 || k > elementos.length - 1) {
 			return null;
 		}
 
@@ -19,13 +19,14 @@ public class FuerzaBruta {
 				if (elementoAComparar.compareTo(elementoActual) < 0) {
 					cantidadMenores++;
 				} else {
-					if (elementoAComparar.compareTo(elementoActual) == 0 && indiceActual > i) //elementos repetidos
+					if (elementoAComparar.compareTo(elementoActual) == 0
+							&& indiceActual > i) // elementos repetidos
 					{
 						cantidadMenores++;
 					}
 				}
 			}
-			elementoEncontrado = cantidadMenores == k - 1;
+			elementoEncontrado = cantidadMenores == k;
 		}
 
 		return elementos[indiceActual];
