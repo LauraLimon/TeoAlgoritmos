@@ -10,11 +10,16 @@ public class K_Selecciones {
 					minimo = j;
 				}
 			}
-			Comparable elemento = elementos[i];
-			elementos[i] = elementos[minimo];
-			elementos[minimo] = elemento;
-		}
-		return elementos[k];
-	}
+			if (minIndex != i) {
+				Comparable aux = elementos[i];
+				elementos[i] = elementos[minIndex];
+				elementos[minIndex] = aux;
 
+			}
+
+		}
+
+		return elementos[k];
+
+	}
 }
