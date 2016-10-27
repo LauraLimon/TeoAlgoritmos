@@ -29,7 +29,7 @@ public class BusquedaHeuristica extends Caminos {
         distAproxPasandoV[verticeOrigen] = heuristica.distanciaAlFinal(grafo, verticeOrigen, verticeDestino);
 
         while (! setAbierto.isEmpty()) {
-            int verticeActual = setAbierto.poll();//the node in openSet having the lowest fScore[] value
+            int verticeActual = setAbierto.poll();
             if (verticeActual == verticeDestino) {
                 return;
             }
@@ -50,7 +50,7 @@ public class BusquedaHeuristica extends Caminos {
                     continue;
                 }
 
-                aristas[verticeActual] = arista;
+                aristas[verticeVecino] = arista;
                 dist[verticeVecino] = distAprox;
                 distAproxPasandoV[verticeVecino] = dist[verticeVecino] + 
                         heuristica.distanciaAlFinal(grafo, verticeVecino, verticeDestino);

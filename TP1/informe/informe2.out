@@ -1,0 +1,16 @@
+\BOOKMARK [1][-]{section.1}{Estad\355stico de orden k}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Fuerza bruta}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Ordenar y seleccionar}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{K-selecciones}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{K-heapsort}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.5}{HeapSelect}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.6}{QuickSelect}{section.1}% 7
+\BOOKMARK [2][-]{subsection.1.7}{Tiempos de ejecuci\363n}{section.1}% 8
+\BOOKMARK [1][-]{section.2}{Recorridos en grafos}{}% 9
+\BOOKMARK [2][-]{subsection.2.1}{BFS}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.2}{Dijkstra}{section.2}% 11
+\BOOKMARK [2][-]{subsection.2.3}{B\372squeda con heur\355stica}{section.2}% 12
+\BOOKMARK [2][-]{subsection.2.4}{A*}{section.2}% 13
+\BOOKMARK [2][-]{subsection.2.5}{Algoritmo con soluci\363n \363ptima}{section.2}% 14
+\BOOKMARK [3][-]{subsubsection.2.5.1}{Grafos no ponderados}{subsection.2.5}% 15
+\BOOKMARK [3][-]{subsubsection.2.5.2}{Grafos ponderados}{subsection.2.5}% 16

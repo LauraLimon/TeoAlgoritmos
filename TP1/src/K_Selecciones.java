@@ -2,7 +2,7 @@ public class K_Selecciones {
 
 	public static Comparable EncontrarElemento(Comparable[] elementos, int k) {
 
-		for (int i = 0; i < k; i++) {
+		for (int i = 0; i <= k; i++) {
 			int n = elementos.length;
 			int minimo = i;
 			for (int j = i + 1; j < n; j++) {

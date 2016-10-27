@@ -11,12 +11,13 @@ public class BFS extends Caminos {
 		dist = new double[g.v()];
 		edge = new Arista[g.v()];
 		for (int v = 0; v < g.v(); v++) {
-			dist[v] = v != src ? Double.POSITIVE_INFINITY : 0;
+			dist[v] = Double.POSITIVE_INFINITY;
+                        edge[v] = null;
 		}
 		dist[src] = 0;
 		q.add(src);
        
-		boolean seLlegoADestino = false;
+		boolean seLlegoADestino = (src == dst);
 		while (!q.isEmpty() && !seLlegoADestino) {
 			int v = q.remove();
 			for (Arista e : g.adj_e(v)) {

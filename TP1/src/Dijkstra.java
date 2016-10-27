@@ -18,9 +18,6 @@ public class Dijkstra extends Caminos {
 		pq.add(src);
 		while (!pq.isEmpty()) {
 			int v = pq.poll();
-			if (v == dst) {
-				break;
-			}
 			for (Arista e : g.adj_e(v)) {
 				actualizarDistancias(e, dst);
 			}

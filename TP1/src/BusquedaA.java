@@ -3,8 +3,6 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 
 public class BusquedaA extends BusquedaHeuristica{
-    private Arista aristas[];
-    private double dist[];
  
     public BusquedaA(Grafo grafo, int verticeOrigen, int verticeDestino,
             HeuristicaDistanciaInvocable heuristica) throws CaminoNoEncontradoException {
@@ -13,11 +11,11 @@ public class BusquedaA extends BusquedaHeuristica{
 
     @Override
     public double distancia(int v) {
-        return dist[v];
+        return super.distancia(v);
     }
 
     @Override
     protected Arista edge_to(int v) {
-        return aristas[v];
+        return super.edge_to(v);
     }
 }
